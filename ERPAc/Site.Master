@@ -6,10 +6,15 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - ERP System</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
+                <!-- jQuery -->
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     </asp:PlaceHolder>
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -37,9 +42,13 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <%-- Select 2 --%>
+    <link href="plugins/select2/css/select2.min.css" rel="stylesheet" />
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
         <div class="wrapper">
 
@@ -166,10 +175,10 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                <a href="" class="brand-link">
+                    <img src="dist/img/AdminLTELogo.png" alt="Cosoft Log" class="brand-image img-circle elevation-3"
                         style="opacity: .8">
-                    <span class="brand-text font-weight-light">AdminLTE 3</span>
+                    <span class="brand-text font-weight-light">ERP System</span>
                 </a>
 
                 <!-- Sidebar -->
@@ -193,27 +202,27 @@
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
-                                        Al Karam Textiles
+                                        Reporting
                 <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="./index.html" class="nav-link active">
+                                        <a href="./acstat" class="nav-link active">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Al Karam Textiles v1</p>
+                                            <p>A/C Statement</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="./index2.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Al Karam Textiles v2</p>
+                                            <p>Trial Balance</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="./index3.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Al Karam Textiles v3</p>
+                                            <p>Balance Sheet</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -624,7 +633,7 @@
                             </li>
                             <li class="nav-header">MISCELLANEOUS</li>
                             <li class="nav-item">
-                                <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                                <a href="https://cosoftconsulting.com/" class="nav-link">
                                     <i class="nav-icon fas fa-file"></i>
                                     <p>Documentation</p>
                                 </a>
@@ -747,11 +756,6 @@
         </div>
         <!-- ./wrapper -->
 
-        <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <!-- jQuery UI 1.11.4 -->
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
             $.widget.bridge('uibutton', $.ui.button)
         </script>
@@ -777,11 +781,12 @@
         <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.js"></script>
-        <!-- AdminLTE Al Karam Textiles demo (This is only for demo purposes) -->
-        <script src="dist/js/pages/Al Karam Textiles.js"></script>
+        <!-- AdminLTE A.B.C Textiless demo (This is only for demo purposes) -->
+<%--        <script src="dist/js/pages/A.B.C Textiles.js"></script>--%>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>
-
+        <%-- Select 2 --%>
+        <script src="plugins/select2/js/select2.min.js"></script>
 
     </form>
 </body>
