@@ -1,76 +1,164 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="test1.aspx.cs" Inherits="ERPAc.test1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Test1.aspx.cs" Inherits="ERPAc.Test1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+        <thead>
+            <tr role="row">
+                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Rendering engine</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Browser</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Engine version</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">CSS grade</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="card card-info">
-                    <div class="card-header">
-                        <h3 class="card-title">Horizontal Form</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form class="form-horizontal">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="txtPartyID" class="col-sm-2 col-form-label">Party:</label>
-                                <div class="col-sm-4">
-<%--                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Party">--%>
-                                    <asp:DropDownList CssClass="form-control select2" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="PartyName" DataValueField="PartyNameID">
-                                    </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ACCOUNT19ConnectionString %>" SelectCommand="SELECT [PartyNameID], [PartyName] FROM [tbl_Party]"></asp:SqlDataSource>
-                                </div>
-                                <label for="txtSDate" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="txtSDate" placeholder="Password">
-                                </div>
-                                <label for="txtEDate" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="txtEDate" placeholder="Password">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <asp:Button ID="btnClick" runat="server" Text="Show Report" />
-                            <button type="submit" class="btn btn-default float-right">Cancel</button>
-                        </div>
-                        <!-- /.card-footer -->
-                    </form>
-                </div>
 
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
-                        <Columns>
-                            <asp:BoundField DataField="VocNo" HeaderText="VocNo" SortExpression="VocNo" />
-                            <asp:BoundField DataField="SrNo" HeaderText="SrNo" SortExpression="SrNo" />
-                            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
-                            <asp:BoundField DataField="PartyID" HeaderText="PartyID" SortExpression="PartyID" />
-                            <asp:BoundField DataField="TType" HeaderText="TType" SortExpression="TType" />
-                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                            <asp:BoundField DataField="NetCredit" HeaderText="NetCredit" SortExpression="NetCredit" />
-                            <asp:BoundField DataField="NetDebit" HeaderText="NetDebit" SortExpression="NetDebit" />
-                            <asp:BoundField DataField="BAL" HeaderText="BAL" SortExpression="BAL" />
-                            <asp:BoundField DataField="PartyRef" HeaderText="PartyRef" SortExpression="PartyRef" />
-                            <asp:BoundField DataField="pVocNo" HeaderText="pVocNo" SortExpression="pVocNo" />
-                        </Columns>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ACCOUNT19ConnectionString %>" SelectCommand="SELECT * FROM [AcStat] WHERE ([PartyID] = @PartyID)">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList1" Name="PartyID" PropertyName="SelectedValue" Type="Int32" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
-                </div>
-            </div>
-        </div>
-    </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr role="row" class="odd">
+                <td tabindex="0" class="sorting_1">Gecko</td>
+                <td>Firefox 1.0</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.7</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="even">
+                <td tabindex="0" class="sorting_1">Gecko</td>
+                <td>Firefox 1.5</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="odd">
+                <td tabindex="0" class="sorting_1">Gecko</td>
+                <td>Firefox 2.0</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="even">
+                <td tabindex="0" class="sorting_1">Gecko</td>
+                <td>Firefox 3.0</td>
+                <td>Win 2k+ / OSX.3+</td>
+                <td>1.9</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="odd">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Camino 1.0</td>
+                <td>OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="even">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Camino 1.5</td>
+                <td>OSX.3+</td>
+                <td>1.8</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="odd">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Netscape 7.2</td>
+                <td>Win 95+ / Mac OS 8.6-9.2</td>
+                <td>1.7</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="even">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Netscape Browser 8</td>
+                <td>Win 98SE+</td>
+                <td>1.7</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="odd">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Netscape Navigator 9</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+            </tr>
+            <tr role="row" class="even">
+                <td class="sorting_1" tabindex="0">Gecko</td>
+                <td>Mozilla 1.0</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1</td>
+                <td>A</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th rowspan="1" colspan="1">Rendering engine</th>
+                <th rowspan="1" colspan="1">Browser</th>
+                <th rowspan="1" colspan="1">Platform(s)</th>
+                <th rowspan="1" colspan="1">Engine version</th>
+                <th rowspan="1" colspan="1">CSS grade</th>
+            </tr>
+        </tfoot>
+    </table>
     <script>
+
         $(function () {
-            $('.select2').select2();
+            $.noConflict();
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
         });
+
     </script>
 </asp:Content>

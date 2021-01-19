@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Stat.aspx.cs" Inherits="ERPAc.Stat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="trial.aspx.cs" Inherits="ERPAc.Trial" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content-wrapper">
@@ -6,8 +6,8 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Account Statement</h1>
-                    </div>  
+                        <h1>Trial Balance</h1>
+                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -73,38 +73,28 @@
                     <div class="col-md-12">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ACCOUNT19ConnectionString %>" SelectCommand="SELECT * FROM [AcStat] WHERE (([PartyID] = @PartyID) AND ([Date] &gt;= @Date) AND ([Date] &lt;= @Date2))">
-                                    <SelectParameters>
-                                        <asp:ControlParameter ControlID="ddlPartyID" Name="PartyID" PropertyName="SelectedValue" Type="Int32" />
-                                        <asp:ControlParameter ControlID="txtSDate" Name="Date" PropertyName="Text" Type="DateTime" />
-                                        <asp:ControlParameter ControlID="txtEDate" Name="Date2" PropertyName="Text" Type="DateTime" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
 
                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
-                                    DataSourceID="SqlDataSource3" style="width: 100%" CssClass="table table-bordered table-hover" OnRowDataBound="GridView1_RowDataBound">
+                                    DataSourceID="SqlDataSource2" style="width: 100%" CssClass="table table-bordered table-hover">
                                     <Columns>
-                                        <asp:BoundField DataField="VocNo" HeaderText="VocNo" SortExpression="VocNo">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="PartyTypeID" HeaderText="PartyTypeID" SortExpression="PartyTypeID">
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="SrNo" HeaderText="SrNo" SortExpression="SrNo">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="PartyID" HeaderText="PartyID" SortExpression="PartyID">
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date"
-                                            DataFormatString="{0:dd-MM-yy}">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="PartyName" HeaderText="PartyName" SortExpression="PartyName">
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="TType" HeaderText="TType" SortExpression="TType" />
-                                        <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                                        <asp:BoundField DataField="NetCredit" HeaderText="NetCredit" SortExpression="NetCredit" />
-                                        <asp:BoundField DataField="NetDebit" HeaderText="NetDebit" SortExpression="NetDebit" />
-                                        <asp:TemplateField ItemStyle-HorizontalAlign="Right" HeaderText="Balance">
-                                            <ItemTemplate>
-                                                <asp:Label ID="lbl_sBal" runat="server"></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="op" HeaderText="op" SortExpression="op" />
+                                        <asp:BoundField DataField="Dr" HeaderText="Dr" SortExpression="Dr" />
+                                        <asp:BoundField DataField="Cr" HeaderText="Cr" SortExpression="Cr" />
+                                        <asp:BoundField DataField="CL" HeaderText="CL" SortExpression="CL" />
                                     </Columns>
                                 </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ACCOUNT19ConnectionString %>" SelectCommand="SELECT PartyName, PartyTypeID, PartyID, op, Dr, Cr, CL FROM dbo.fn_Trial(@sDt, @eDt) AS Trial_1">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="txtSDate" Name="sDt" PropertyName="Text" Type="DateTime" />
+                                        <asp:ControlParameter ControlID="txtEDate" Name="eDt" PropertyName="Text" Type="DateTime" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
                             </ContentTemplate>
                             <Triggers>
                                 <asp:AsyncPostBackTrigger ControlID="Button1" EventName="Click" />

@@ -37,6 +37,11 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
     <form runat="server">
@@ -200,13 +205,13 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="./acstat" class="nav-link active">
+                                        <a href="./stat" class="nav-link active">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>A/C Statement</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./index2.html" class="nav-link">
+                                        <a href="./trial" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Trial Balance</p>
                                         </a>

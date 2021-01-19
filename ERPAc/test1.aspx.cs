@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ERPAc
 {
-    public partial class test1 : System.Web.UI.Page
+    public partial class Test1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
