@@ -19,7 +19,7 @@ namespace ERPAc
         protected void Button1_Click(object sender, EventArgs e)
         {
             this.GridView1.DataBind();
-            this.ddlPartyID.Focus();
+            //this.ddlPartyID.Focus();
         }
     }
 }
