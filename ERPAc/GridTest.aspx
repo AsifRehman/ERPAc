@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2" OnItemDataBound="Repeater1_ItemDataBound">
         <HeaderTemplate>
-            <table>
+            <table class="table table-bordered table-sm">
         </HeaderTemplate>
         <ItemTemplate>
             <tr>

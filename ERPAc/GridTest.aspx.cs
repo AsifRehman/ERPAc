@@ -24,35 +24,17 @@ namespace ERPAc
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+                RepeaterItem item = e.Item;
+                Label partyTID = (item.FindControl("lblPTID") as Label);
+                if (ptID == partyTID.Text)
                 {
-                    RepeaterItem item = e.Item;
-                    Label partyTID = (item.FindControl("lblPTID") as Label);
-                    ptID = partyTID.Text;
-                    if ( ptID == partyTID.Text)
-                    {
-                        isChanged = false;
-                    }
-                    else
-                    {
-                        isChanged = true;
-                    }
+                    isChanged = false;
                 }
-
-                //RepeaterItem item = e.Item;
-                //int CurPtID = int.Parse((item.FindControl("lblCL") as Label).Text);
-
-                //if (CurPtID != ptID)
-                //{
-                //    (item.FindControl("Label2") as Label).Text = "Changed";
-                //}
-                //else
-                //{
-                //    (item.FindControl("Label2") as Label).Text = "";
-                //}
-
-                //Reference the Repeater Item.
-                //Reference the Controls.
+                else
+                {
+                    isChanged = true;
+                }
+                ptID = partyTID.Text;
             }
         }
     }
