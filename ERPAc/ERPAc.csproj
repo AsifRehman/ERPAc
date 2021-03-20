@@ -150,6 +150,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="digitalmanager.js" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
     <Content Include="dist\css\alt\adminlte.components.css" />
@@ -204,7 +205,7 @@
     <Content Include="dist\js\pages\dashboard3.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="forms\gr\KP.aspx" />
+    <Content Include="Grey\forms\KP.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -303,6 +304,7 @@
     <Content Include="dist\js\adminlte.js.map" />
     <Content Include="dist\js\adminlte.min.js.map" />
     <Content Include="Main.Master" />
+    <Content Include="Test.aspx" />
     <Content Include="Test1.aspx" />
     <Content Include="trial.aspx" />
     <Content Include="WebForm2.aspx" />
@@ -2012,11 +2014,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\gr\KP.aspx.cs">
+    <Compile Include="Grey\forms\KP.aspx.cs">
       <DependentUpon>KP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\gr\KP.aspx.designer.cs">
+    <Compile Include="Grey\forms\KP.aspx.designer.cs">
       <DependentUpon>KP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -2043,6 +2045,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test1.aspx.cs">
       <DependentUpon>Test1.aspx</DependentUpon>
