@@ -23,7 +23,7 @@
 
                 <div class="row">
                     <!-- left column -->
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
                         <!-- jquery validation -->
                         <div class="card card-primary">
                             <div class="card-header">
@@ -40,16 +40,93 @@
                                         <label for="txtGreyLot" class="col-sm-1">GreyLot:</label>
                                         <input type="text" class="form-control col-sm-1" id="txtGreyLot">
 
-                                        <label for="txtDate" class="col-sm-1">Date:</label>
-                                        <div class="input-group date" id="sDate" data-target-input="nearest">
-                                            <asp:TextBox CssClass="form-control datetimepicker-input" data-target="#sDate" runat="server" ID="txtSDate"></asp:TextBox>
-                                            <div class="input-group-append" data-target="#sDate" data-toggle="datetimepicker">
+                                        <label for="txtDate" class="col-sm-1">S Date:</label>
+                                        <div class="input-group date col-sm-2" id="Date" data-target-input="nearest">
+                                            <asp:TextBox CssClass="form-control datetimepicker-input" data-target="#Date" runat="server" ID="txtDate"></asp:TextBox>
+                                            <div class="input-group-append" data-target="#Date" data-toggle="datetimepicker">
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>
 
+                                        <label for="ddlPartyID" class="col-sm-1">Party:</label>
+                                        <asp:DropDownList ID="ddlPartyID" runat="server" CssClass="form-control select2 col-sm-3" DataSourceID="SqlDataSource1" DataTextField="PartyName" DataValueField="PartyNameID"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GREY19ConnectionString %>" SelectCommand="SELECT [PartyNameID], [PartyName] FROM [gr_Party] ORDER BY [PartyName]"></asp:SqlDataSource>
 
                                     </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label for="ddlSupplierID" class="col-sm-1">Supplier:</label>
+                                        <asp:DropDownList ID="ddlSupplierID" runat="server" CssClass="form-control select2 col-sm-3" DataSourceID="SqlDataSource2" DataTextField="Supplier" DataValueField="SupplierID"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GREY19ConnectionString %>" SelectCommand="SELECT [SupplierID], [Supplier] FROM [GreySupplier] ORDER BY [Supplier]"></asp:SqlDataSource>
+
+                                        <label for="ddlLoom" class="col-sm-1">Loom:</label>
+                                        <asp:DropDownList ID="ddlLoom" runat="server" CssClass="form-control select2 col-sm-3" DataSourceID="SqlDataSource3" DataTextField="Loom" DataValueField="Loom"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GREY19ConnectionString %>" SelectCommand="SELECT DISTINCT Loom FROM PParchi ORDER BY Loom"></asp:SqlDataSource>
+
+
+
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label for="ddlItemID" class="col-sm-1">Item:</label>
+                                        <asp:DropDownList ID="ddlItemID" runat="server" CssClass="form-control select2 col-sm-3" DataSourceID="SqlDataSource4" DataTextField="ItemName" DataValueField="ItemID"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:GREY19ConnectionString %>" SelectCommand="SELECT ItemID, ItemName, ItemTypeID FROM greyItems WHERE (ItemCategoryID = 1) ORDER BY ItemName"></asp:SqlDataSource>
+
+                                        <label for="txtRemarks" class="col-sm-1">Remarks:</label>
+                                        <input type="text" class="form-control col-sm-2" id="txtRemarks">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtThan" class="col-sm-1">Than:</label>
+                                        <input type="number" class="form-control col-sm-1" id="txtThan">
+
+
+                                        <label for="txtRec" class="col-sm-1">Received:</label>
+                                        <input type="number" class="form-control col-sm-1" id="txtRec">
+
+
+                                        <label for="sel1">Mtr/Yds:</label>
+                                        <select class="form-control" id="sel1">
+                                            <option selected>Mtr</option>
+                                            <option>Yds</option>
+                                        </select>
+
+                                        <label for="txtEL" class="col-sm-1">EL:</label>
+                                        <select class="form-control" id="txtEL">
+                                            <option>5/1</option>
+                                            <option>5/2</option>
+                                            <option>5/3</option>
+                                            <option>5/4</option>
+                                            <option>5/5</option>
+                                            <option>5/6</option>
+                                            <option>5/7</option>
+                                            <option>5/8</option>
+                                            <option>5/9</option>
+                                            <option>5/10</option>
+                                            <option>10/1</option>
+                                            <option>10/2</option>
+                                            <option>10/3</option>
+                                            <option>10/4</option>
+                                            <option>10/5</option>
+                                            <option>10/6</option>
+                                            <option>10/7</option>
+                                            <option>10/8</option>
+                                            <option>10/9</option>
+                                            <option>10/10</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtByPerson" class="col-sm-1">By Person:</label>
+                                        <input type="text" class="form-control col-sm-2" id="txtByPerson">
+
+                                        <label for="txtVehicle" class="col-sm-1">Vehicle:</label>
+                                        <input type="text" class="form-control col-sm-2" id="txtVehicle">
+                                    </div>
+
+                                    <div class="form-group">
+
+                                    </div>
+
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
@@ -65,7 +142,6 @@
                     </div>
                     <!--/.col (right) -->
                 </div>
-
             </div>
         </section>
     </div>
@@ -81,14 +157,17 @@
             })
 
             //Datemask dd/mm/yyyy
-            $('#txtSDate').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            $('#sdd').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
             //Datemask2 mm/dd/yyyy
             $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
             //Money Euro
             $('[data-mask]').inputmask()
 
             //Date range picker
-            $('#txtSDate').datetimepicker({
+            $('#Date').datetimepicker({
+                format: 'DD/MM/YYYY'
+            });
+            $('#eDate').datetimepicker({
                 format: 'DD/MM/YYYY'
             });
 
