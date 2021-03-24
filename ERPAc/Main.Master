@@ -43,7 +43,7 @@
 
 
 </head>
-<body class="sidebar-mini layout-fixed sidebar-collapse text-sm">
+<body class="sidebar-mini layout-fixed sidebar-collapse text-xs">
     <form runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
